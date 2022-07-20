@@ -22,7 +22,7 @@ async function getShowsByTerm(searchTerm) {
         id: obj.show.id,
         name: obj.show.name,
         summary: obj.show.summary,
-        image: obj.show.image
+        image: obj.show.image.medium
       }
   });
 
@@ -118,7 +118,7 @@ function populateShows(shows) {
  */
 
 async function searchForShowAndDisplay() {
-  const term = $("#searchForm-term").val();
+  const term = $("#search-query").val();
   const shows = await getShowsByTerm(term);
 
   $episodesArea.hide();
